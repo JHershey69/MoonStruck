@@ -10,8 +10,8 @@ class MoonStruck
   public:
     MoonStruck();
     virtual ~MoonStruck();
-    int buildURL(char* _KEY, float _LAT, float _LON);
-    int parseMoonStruck(void);
+  
+    int parseMoonStruck(char* _KEY, float _LAT, float _LON);
 
     //Variables
     float location_latitude; // 39.953728
