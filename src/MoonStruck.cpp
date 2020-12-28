@@ -6,17 +6,13 @@ MoonStruck::MoonStruck()
 }
 
 
-int MoonStruck::buildURL(char* _KEY, float _LAT, float _LON)
-{
-  sprintf(moonURL, "https://api.ipgeolocation.io/astronomy?apiKey=%s&lat=%f&long=%f", _KEY, _LAT, _LON);
 
-  return 0;
-}
-
-int MoonStruck::parseMoonStruck()
+int MoonStruck::parseMoonStruck(char* _KEY, float _LAT, float _LON)
 {
   int error_code;
-
+  
+  sprintf(moonURL, "https://api.ipgeolocation.io/astronomy?apiKey=%s&lat=%f&long=%f", _KEY, _LAT, _LON);
+  
   HTTPClient http;
   http.begin(moonURL);
 
