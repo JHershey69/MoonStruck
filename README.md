@@ -30,4 +30,4 @@
 ### #include <MoonStruck.h>
 <br> MoonStruck MS; <---Invokde
 <br> MS.variableName; <--- use variables
-<br> MS.MoonStruck(char key, float latitude, float longitude); <-- call API
+<br> MS.parseMoonStruck(char key, float latitude, float longitude); <-- call API
