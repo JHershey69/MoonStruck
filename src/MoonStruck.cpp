@@ -7,7 +7,7 @@ MoonStruck::MoonStruck()
 
 
 
-int MoonStruck::parseMoonStruck(char* _KEY, float _LAT, float _LON)
+int MoonStruck::MoonStruck(char* _KEY, float _LAT, float _LON)
 {
   int error_code;
   
