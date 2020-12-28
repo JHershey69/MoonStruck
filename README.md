@@ -1,5 +1,7 @@
 # MoonStruck
-MoonStruck Library for ESP32 to find everything LUNAR
+## MoonStruck Library for ESP32 to find everything LUNAR
+
+### Requires ArduinoJson, HTTPClient (this is IN the ESP32 just include it)
 
 <hr></hr>
 <br>####Variables
@@ -24,6 +26,7 @@ MoonStruck Library for ESP32 to find everything LUNAR
  float moon_azimuth; // 33.592474665393695<br>
  float moon_parallactic_angle; // -17.897918830310246<br>
 <br>
-#include <MoonStruck.h>
-<br>MoonStruck MS;
-<br>MS.variableName;
+### #include <MoonStruck.h>
+<br> MoonStruck MS; <---Invokde
+<br> MS.variableName; <--- use variables
+<br> MS.MoonStruck(char key, float latitude, float longitude); <-- call API
