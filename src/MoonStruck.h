@@ -11,7 +11,7 @@ class MoonStruck
     MoonStruck();
     virtual ~MoonStruck();
   
-    int MoonStruck(char* _KEY, float _LAT, float _LON);
+    int parseMoonStruck(char* _KEY, float _LAT, float _LON);
 
     //Variables
     float location_latitude; // 39.953728
