@@ -5,7 +5,7 @@
 
 #define HOMESSID "*****"
 #define HOMEPW "******"
-#define MOONKEY "1a277e9ce09343f9b7e21ffeb6525c26"
+#define MOONKEY "*************************"
 
 
 float myLATITUDE = 39.9537291;
