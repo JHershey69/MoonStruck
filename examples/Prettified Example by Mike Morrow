@@ -1,0 +1,48 @@
+/* This is example code to demonstrate the complete use of the MoonStruck
+* library.
+* Obtain a key from ipgeolocation.io and insert it here.
+* Input your current lat and long
+* Input your SSID and Password for your WAP
+* Run.
+* Enjoy.
+* Sample code by Mike Morrow based on the work of Jessica Hershey
+*/
+#include <MoonStruck.h>
+#include <WiFi.h>
+#include <WiFiMulti.h>
+#include <HTTPClient.h>
+#include <Arduino.h>
+#include <ArduinoJson.h>
+//Change these 3 and the addAP, later.
+// From https://app.ipgeolocation.io/
+char IPG_key[] = "";
+float myLat = 18.1912;
+float myLon = 120.55;
+WiFiMulti wifiMulti;
+void setup()
+{
+Serial.begin(115200); delay(1000);
+Serial.print("\n\n\nConnecting to SSID... ");
+wifiMulti.addAP("your_SSID", "your_PASS");
+if ((wifiMulti.run() == WL_CONNECTED)) {
+Serial.print("Fetching data... ");
+MoonStruck MS; // < -- Instantiate
+Serial.println("Parsing data...");
+MS.parseMoonStruck(IPG_key, myLat, myLon); // < -- call API
+Serial.printf("Location Lat:\t%.2f\n", MS.location_latitude);
+Serial.printf("Location Lon:\t%.2f\n", MS.location_longitude);
+Serial.printf("Moonrise at:\t%s\n", MS.moonrise);
+Serial.printf("Moonset at:\t%s\n", MS.moonset);
+Serial.printf("Moonstat:\t%s\n", MS.moon_status);
+Serial.printf("Moon Alt:\t%.2f° ", MS.moon_altitude);
+if (MS.moon_altitude > 2.)
+Serial.println("The moon is visible now.");
+else
+Serial.println("The moon is not visible now.");
+Serial.printf("Moon Dist:\t%.2f\n", MS.moon_distance);
+Serial.printf("Moon Az:\t%.2f°\n", MS.moon_azimuth);
+Serial.printf("Moon PAng:\t%.2f°\n", MS.moon_parallactic_angle);
+}
+}
+void loop() {
+}
